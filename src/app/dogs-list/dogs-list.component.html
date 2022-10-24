@@ -1,0 +1,4 @@
+<select class="dogs-list">
+    <option *ngFor="let dog of dogList.message"><button type="button"(click)="onSelect(dog)"></button>{{dog}}</option>
+</select>
+<app-dog-details [dog]="selectedDog"></app-dog-details>
