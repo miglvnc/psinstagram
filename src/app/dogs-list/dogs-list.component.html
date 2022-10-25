@@ -1,4 +1,14 @@
-<select class="dogs-list">
-    <option *ngFor="let dog of dogList.message"><button type="button"(click)="onSelect(dog)"></button>{{dog}}</option>
-</select>
-<app-dog-details [dog]="selectedDog"></app-dog-details>
+<div class="wrapper">
+    <div class="dropdownContainer">
+        <select class="dogs-list" (change)="ChangeDog($event)">
+            <option><button>--wybierz--</button></option>
+            <option *ngFor="let dog of dogList.message" [value]="dog"><button>{{dog}}</button>
+            </option> 
+        </select>
+    </div>
+    <div class="detailsContainer">
+        <h2>{{header}}</h2>
+        <img src="{{dogImgDisplay}}">
+        <p>{{text}}<a href="{{link}}">{{selectedValue}}</a></p>
+    </div>
+</div>
